@@ -7,7 +7,16 @@ function toInt(str) {
   return parseInt(str, 10) || 0;
 }
 
+/**
+ * @Controller user
+ */
 class UserController extends Controller {
+  /**
+   * @Summary 查询用户信息
+   * @Router GET /users
+   * @Request query string *userKey 用户ID
+   * @Description 查询用户信息
+   */
   async index() {
     const ctx = this.ctx;
     const query = { limit: toInt(ctx.query.limit), offset: toInt(ctx.query.offset) };

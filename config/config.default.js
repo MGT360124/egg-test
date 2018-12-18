@@ -25,14 +25,22 @@ module.exports = appInfo => {
     exports.swaggerdoc = {
         dirScanner: './app/controller',
         apiInfo: {
-          title: 'egg-swagger',
-          description: 'swagger-ui for egg',
-          version: '1.0.0',
+            title: 'egg-swagger',
+            description: 'swagger-ui for egg',
+            version: '1.0.0',
         },
         schemes: ['http', 'https'],
         consumes: ['application/json'],
         produces: ['application/json'],
         enable: true,
-      };
+        securityDefinitions: {
+            APIKey: {
+                type: "apiKey",
+                name: "Authorization",
+                in: "header",
+                description: "Bearer {token}"
+            }
+        }
+    };
     return config;
 };
