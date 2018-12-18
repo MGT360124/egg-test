@@ -28,7 +28,7 @@ exports.io = {
     package: "egg-socket.io"
 };
 
-// exports.swaggerdoc = {
-//     enable: true,
-//     package: 'egg-swagger-builder',
-// };
+exports.swaggerdoc = {
+    enable: true,
+    package: 'egg-swagger-doc',
+  };

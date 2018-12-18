@@ -21,5 +21,18 @@ module.exports = appInfo => {
         database: 'egg-sequelize-doc-default',
     };
 
+    // 使用swaggerdoc测试
+    exports.swaggerdoc = {
+        dirScanner: './app/controller',
+        apiInfo: {
+          title: 'egg-swagger',
+          description: 'swagger-ui for egg',
+          version: '1.0.0',
+        },
+        schemes: ['http', 'https'],
+        consumes: ['application/json'],
+        produces: ['application/json'],
+        enable: true,
+      };
     return config;
 };
